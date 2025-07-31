@@ -40,10 +40,7 @@ public class SoccerBl
 		System.out.println("Dammi ruolo");
 		String role = Console.readString();
 
-		SoccerTeam team= null;
-		for(SoccerTeam t:teams)
-			if(t.getName().equalsIgnoreCase(name))
-				team = t;
+		SoccerTeam team = findByName(name);
 
 		if(team==null)
 			System.out.println("non trovato");
@@ -51,4 +48,36 @@ public class SoccerBl
 			System.out.println(team.regroupByRole().get(role));
 	}
 
+	/**
+	 * Chiedere utente nome di un team, stampare
+	 * i giocatori di quel team non pronti
+	 */
+	public static void printFitness()
+	{
+		System.out.println("Inserisci nome team");
+		String teamName = Console.readString();
+		SoccerTeam team = findByName(teamName);
+		if(team==null)
+			System.out.println("non trovato");
+		else
+		{
+			System.out.println("Giocatori non pronti");
+			for(SoccerPlayer p : team.getPlayersNotReady())
+				System.out.println(p);
+		}
+	}
+
+	/**
+	 * Se abbiamo un team con il nome passato
+	 * lo restituisce, altrimenti restituisce null
+	 */
+	private static SoccerTeam findByName(String teamName)
+	{
+		SoccerTeam team= null;
+		for(SoccerTeam t:teams)
+			if(t.getName().equalsIgnoreCase(teamName))
+				team = t;
+
+		return team;
+	}
 }

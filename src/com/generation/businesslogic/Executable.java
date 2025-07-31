@@ -22,9 +22,10 @@ public class Executable
 			{
 				case "printeams" 		-> SoccerBl.printAll();
 				case "printrole" 		-> SoccerBl.printByTeamNameAndRole();
-				case "help"            -> help();
-				case "quit"            -> System.out.println("BYE BYE");
-				default                -> System.out.println("Comando non valido");
+				case "printfitness"		-> SoccerBl.printFitness();
+				case "help"            	-> help();
+				case "quit"            	-> System.out.println("BYE BYE");
+				default                	-> System.out.println("Comando non valido");
 			}
 
 		}while (!cmd.equals("quit"));

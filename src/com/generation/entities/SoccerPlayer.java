@@ -178,4 +178,9 @@ public class SoccerPlayer
 				.add("weight=" + weight)
 				.toString();
 	}
+
+	public double bmi()
+	{
+		return weight/(height*height);
+	}
 }

@@ -145,4 +145,15 @@ public class SoccerTeam
 				.add("players=" + players)
 				.toString();
 	}
+
+	public ArrayList<SoccerPlayer> getPlayersNotReady()
+	{
+		ArrayList<SoccerPlayer> res = new ArrayList<>();
+
+		for(SoccerPlayer p : players)
+			if(p.bmi()>25)
+				res.add(p);
+
+		return res;
+	}
 }
