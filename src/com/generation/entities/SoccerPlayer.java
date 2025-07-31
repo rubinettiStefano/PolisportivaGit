@@ -48,6 +48,13 @@ public class SoccerPlayer
 		this.surname = surname;
 	}
 
+	public SoccerPlayer(String name, String surname, LocalDate dob)
+	{
+		setName(name);
+		setSurname(surname);
+		setDob(dob);
+	}
+
 	public SoccerPlayer(String name, String surname, LocalDate dob, String role, String country, Double height, Double weight)
 	{
 		setName(name);
